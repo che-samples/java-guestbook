@@ -32,7 +32,7 @@ commands:
       workingDir: ${PROJECTS_ROOT}/java-guestbook
       commandLine: ls -la
       group:
-        kind: tools
+        kind: run
         isDefault: true
 
   # - id: run
