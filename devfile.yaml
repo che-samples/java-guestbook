@@ -4,7 +4,7 @@ metadata:
 # attributes:
 #   che-theia.eclipse.org/sidecar-policy: USE_DEV_CONTAINER
 components:
-  - name: tools
+  - name: maven
     container:
       image: quay.io/devfile/universal-developer-image:ubi8-b452131
       memoryLimit: 512Mi
@@ -71,6 +71,16 @@ commands:
       component: m2
       workingDir: ${PROJECTS_ROOT}/java-guestbook
       commandLine: ls -la
+      group:
+        kind: run
+        isDefault: true
+
+  - id: maven-build-backend
+    exec:
+      component: maven
+      workingDir: "${PROJECTS_ROOT}/java-guestbook/backend"
+      commandLine: >-
+        mvn clean install
       group:
         kind: run
         isDefault: true
