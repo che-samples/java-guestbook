@@ -7,6 +7,9 @@ components:
   - name: tools
     container:
       image: quay.io/devfile/universal-developer-image:ubi8-b452131
+      memoryLimit: 512Mi
+      # memoryLimit: 3Gi
+
       endpoints:
         - name: java-guestbook-backend
           exposure: public
@@ -22,6 +25,19 @@ components:
           exposure: none
           protocol: tcp
           targetPort: 5005
+      
+      env:
+        - name: MAVEN_CONFIG
+          value: ""
+
+        - name: JAVA_OPTS
+          value: "-XX:MaxRAMPercentage=50.0 -XX:+UseParallelGC -XX:MinHeapFreeRatio=10
+                -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90
+                -Dsun.zip.disableMemoryMapping=true -Xms20m -Djava.security.egd=file:/dev/./urandom
+                -Duser.home=/home/user"
+
+        - name: MAVEN_OPTS
+          value: $(JAVA_OPTS)
 
       volumeMounts:
         - name: m2
