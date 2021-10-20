@@ -68,20 +68,23 @@ components:
 commands:
   - id: maven-build-backend
     exec:
-      label: "Maven :: build backend"
+      label: "maven :: build backend"
       component: maven
       workingDir: "${PROJECTS_ROOT}/java-guestbook/backend"
-      commandLine: "mvn clean install"
+      commandLine: |
+        whereis mvn
+        mvn clean install
       group:
         kind: build
         isDefault: true
 
   - id: maven-build-frontend
     exec:
-      label: "Maven :: build frontend"
+      label: "maven :: build frontend"
       component: maven
       workingDir: "${PROJECTS_ROOT}/java-guestbook/frontend"
-      commandLine: "mvn clean install"
+      commandLine: |
+        mvn clean install
       group:
         kind: build
         isDefault: true
