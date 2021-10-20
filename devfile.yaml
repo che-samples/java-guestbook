@@ -85,6 +85,16 @@ commands:
         kind: run
         isDefault: true
 
+  - id: maven-build-frontend
+    exec:
+      component: maven
+      workingDir: "${PROJECTS_ROOT}/java-guestbook/frontend"
+      commandLine: >-
+        mvn clean install
+      group:
+        kind: run
+        isDefault: true
+
   # - id: run
   #   exec:
   #     component: tools
