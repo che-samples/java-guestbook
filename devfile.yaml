@@ -72,9 +72,7 @@ commands:
       label: "maven :: build backend"
       component: maven
       workingDir: "${PROJECTS_ROOT}/java-guestbook/backend"
-      commandLine: |
-        whereis mvn
-        mvn clean install
+      commandLine: "mvn clean install"
       group:
         kind: build
         isDefault: true
@@ -84,8 +82,7 @@ commands:
       label: "maven :: build frontend"
       component: maven
       workingDir: "${PROJECTS_ROOT}/java-guestbook/frontend"
-      commandLine: |
-        mvn clean install
+      commandLine: "mvn clean install"
       group:
         kind: build
         isDefault: true
