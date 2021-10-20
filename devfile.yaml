@@ -66,33 +66,24 @@ components:
       size: 1G
 
 commands:
-  - id: list-projects-directory
-    exec:
-      component: m2
-      workingDir: ${PROJECTS_ROOT}/java-guestbook
-      commandLine: ls -la
-      group:
-        kind: run
-        isDefault: true
-
   - id: maven-build-backend
     exec:
+      label: "Maven :: build backend"
       component: maven
       workingDir: "${PROJECTS_ROOT}/java-guestbook/backend"
-      commandLine: >-
-        mvn clean install
+      commandLine: "mvn clean install"
       group:
-        kind: run
+        kind: build
         isDefault: true
 
   - id: maven-build-frontend
     exec:
+      label: "Maven :: build frontend"
       component: maven
       workingDir: "${PROJECTS_ROOT}/java-guestbook/frontend"
-      commandLine: >-
-        mvn clean install
+      commandLine: "mvn clean install"
       group:
-        kind: run
+        kind: build
         isDefault: true
 
   # - id: run
