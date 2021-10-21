@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Attach) - Backend",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 5006
+        },
+        {
+            "type": "java",
+            "name": "Debug (Attach) - Frontend",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 5005
+        }
+    ]
+}
