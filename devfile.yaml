@@ -68,16 +68,16 @@ components:
           targetPort: 27017
       
       volumeMounts:
-        - name: mongodb-data
+        - name: mongodbdata
           path: /var/lib/mongodb/data
 
   - name: m2
     volume:
       size: 1G
 
-  - name: mongodb-data
+  - name: mongodbdata
     volume:
-      size: 250M
+      size: 1G
 
 commands:
   - id: maven-build-backend
