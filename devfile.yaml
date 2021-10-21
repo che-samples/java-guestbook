@@ -68,14 +68,14 @@ components:
           targetPort: 27017
       
       volumeMounts:
-        - name: mongodb_data
+        - name: mongodb-data
           path: /var/lib/mongodb/data
 
   - name: m2
     volume:
       size: 1G
 
-  - name: mongodb_data
+  - name: mongodb-data
     volume:
       size: 250M
 
