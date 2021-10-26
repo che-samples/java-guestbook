@@ -6,8 +6,10 @@ metadata:
 components:
   - name: maven
     container:
+      # image: quay.io/devfile/base-developer-image:ubi8-7bd4fe3
       # image: quay.io/devfile/universal-developer-image:ubi8-b452131
-      image: quay.io/eclipse/che-java11-maven:next
+      image: quay.io/devfile/universal-developer-image:ubi8-112f94a
+      # image: quay.io/eclipse/che-java11-maven:next
       memoryLimit: 512Mi
       # memoryLimit: 3Gi
 
