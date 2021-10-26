@@ -103,7 +103,7 @@ commands:
         kind: test
         isDefault: true
 
-        - id: maven-build-frontend
+  - id: maven-build-frontend
     exec:
       label: "build frontend"
       component: maven
