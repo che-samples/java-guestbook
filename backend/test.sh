@@ -26,4 +26,8 @@ ls -la "${DIR}"
 
 echo "#####################################################"
 
+set +e
+whereis mvn
+set -e
+
 mvn clean install
