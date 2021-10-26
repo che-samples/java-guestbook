@@ -93,7 +93,17 @@ commands:
         kind: build
         isDefault: true
 
-  - id: maven-build-frontend
+  - id: maven-test-backend
+    exec:
+      label: "test backend"
+      component: maven
+      workingDir: "${PROJECTS_ROOT}/java-guestbook/backend"
+      commandLine: "./test.sh"
+      group:
+        kind: test
+        isDefault: true
+
+        - id: maven-build-frontend
     exec:
       label: "build frontend"
       component: maven
