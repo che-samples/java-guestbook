@@ -26,7 +26,16 @@ ls -la "${DIR}"
 
 echo "#####################################################"
 
+export
+
+echo "#####################################################"
+
+echo "> whoamI ??"
+whoami
+echo
+
 set +e
+echo "> whereis mvn ??"
 whereis mvn
 set -e
 
