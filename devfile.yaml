@@ -4,9 +4,7 @@ metadata:
 components:
   - name: maven
     container:
-      # image: quay.io/devfile/universal-developer-image:ubi8-112f94a
-      image: quay.io/vgulyy/universal-developer-image:ubi8-REV0
-      # image: quay.io/eclipse/che-java11-maven:next
+      image: quay.io/eclipse/che-java11-maven:next
       memoryLimit: 3Gi
 
       endpoints:
@@ -86,16 +84,6 @@ commands:
       commandLine: "mvn clean install"
       group:
         kind: build
-        isDefault: true
-
-  - id: maven-test-backend
-    exec:
-      label: "test backend"
-      component: maven
-      workingDir: "${PROJECTS_ROOT}/java-guestbook/backend"
-      commandLine: "./test.sh"
-      group:
-        kind: test
         isDefault: true
 
   - id: maven-build-frontend
