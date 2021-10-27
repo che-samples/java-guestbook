@@ -1,16 +1,13 @@
 schemaVersion: 2.1.0
 metadata:
   name: java-guestbook
-# attributes:
-#   che-theia.eclipse.org/sidecar-policy: USE_DEV_CONTAINER
 components:
   - name: maven
     container:
       # image: quay.io/devfile/universal-developer-image:ubi8-112f94a
       image: quay.io/vgulyy/universal-developer-image:ubi8-REV0
       # image: quay.io/eclipse/che-java11-maven:next
-      memoryLimit: 512Mi
-      # memoryLimit: 3Gi
+      memoryLimit: 3Gi
 
       endpoints:
         - name: java-guestbook-backend
@@ -64,8 +61,7 @@ components:
 
       endpoints:
         - name: java-guestbook-mongodb
-          # exposure: none
-          exposure: public
+          exposure: none
           protocol: tcp
           targetPort: 27017
       
