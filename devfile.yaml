@@ -1,8 +1,8 @@
 schemaVersion: 2.1.0
 metadata:
   name: java-guestbook
-attributes:
-  che-theia.eclipse.org/sidecar-policy: USE_DEV_CONTAINER
+# attributes:
+#   che-theia.eclipse.org/sidecar-policy: USE_DEV_CONTAINER
 components:
   - name: tools
     container:
