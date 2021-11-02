@@ -4,7 +4,7 @@ metadata:
 attributes:
   che-theia.eclipse.org/sidecar-policy: USE_DEV_CONTAINER
 components:
-  - name: maven
+  - name: tools
     container:
       image: quay.io/eclipse/che-java11-maven:next
       memoryLimit: 3Gi
@@ -81,7 +81,7 @@ commands:
   - id: maven-build-backend
     exec:
       label: "build backend"
-      component: maven
+      component: tools
       workingDir: "${PROJECTS_ROOT}/java-guestbook/backend"
       commandLine: "mvn clean install"
       group:
@@ -91,7 +91,7 @@ commands:
   - id: maven-build-frontend
     exec:
       label: "build frontend"
-      component: maven
+      component: tools
       workingDir: "${PROJECTS_ROOT}/java-guestbook/frontend"
       commandLine: "mvn clean install"
       group:
@@ -101,7 +101,7 @@ commands:
   - id: run-backend
     exec:
       label: "run backend"
-      component: maven
+      component: tools
       workingDir: "${PROJECTS_ROOT}/java-guestbook/backend"
       commandLine: |
         java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006,quiet=y \
@@ -113,7 +113,7 @@ commands:
   - id: run-frontend
     exec:
       label: "run frontend"
-      component: maven
+      component: tools
       workingDir: "${PROJECTS_ROOT}/java-guestbook/frontend"
       commandLine: |
         java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005,quiet=y \
