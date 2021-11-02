@@ -1,6 +1,8 @@
 schemaVersion: 2.1.0
 metadata:
   name: java-guestbook
+attributes:
+  che-theia.eclipse.org/sidecar-policy: USE_DEV_CONTAINER
 components:
   - name: maven
     container:
@@ -23,18 +25,18 @@ components:
           protocol: tcp
           targetPort: 5005
       
-      env:
-        - name: MAVEN_CONFIG
-          value: ""
+      # env:
+      #   - name: MAVEN_CONFIG
+      #     value: ""
 
-        - name: JAVA_OPTS
-          value: "-XX:MaxRAMPercentage=50.0 -XX:+UseParallelGC -XX:MinHeapFreeRatio=10
-                -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90
-                -Dsun.zip.disableMemoryMapping=true -Xms20m -Djava.security.egd=file:/dev/./urandom
-                -Duser.home=/home/user"
+      #   - name: JAVA_OPTS
+      #     value: "-XX:MaxRAMPercentage=50.0 -XX:+UseParallelGC -XX:MinHeapFreeRatio=10
+      #           -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90
+      #           -Dsun.zip.disableMemoryMapping=true -Xms20m -Djava.security.egd=file:/dev/./urandom
+      #           -Duser.home=/home/user"
 
-        - name: MAVEN_OPTS
-          value: $(JAVA_OPTS)
+      #   - name: MAVEN_OPTS
+      #     value: $(JAVA_OPTS)
 
       volumeMounts:
         - name: m2
