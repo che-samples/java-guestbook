@@ -29,40 +29,40 @@ components:
         - name: m2
           path: /home/user/.m2
 
-  # - name: mongo
-  #   container:
-  #     image: quay.io/eclipse/che--centos--mongodb-36-centos7:latest-ffdf2431bbc6d9a9d2a03e95bbbe8adb49ab9eac301f268a35038c84288259c1
-  #     memoryLimit: 300Mi
-  #     env:
-  #     - name: MONGODB_USER
-  #       value: user
+  - name: mongo
+    container:
+      image: quay.io/eclipse/che--centos--mongodb-36-centos7:latest-ffdf2431bbc6d9a9d2a03e95bbbe8adb49ab9eac301f268a35038c84288259c1
+      memoryLimit: 300Mi
+      env:
+      - name: MONGODB_USER
+        value: user
 
-  #     - name: MONGODB_PASSWORD
-  #       value: password
+      - name: MONGODB_PASSWORD
+        value: password
 
-  #     - name: MONGODB_DATABASE
-  #       value: guestbook
+      - name: MONGODB_DATABASE
+        value: guestbook
         
-  #     - name: MONGODB_ADMIN_PASSWORD
-  #       value: password
+      - name: MONGODB_ADMIN_PASSWORD
+        value: password
 
-  #     endpoints:
-  #       - name: java-guestbook-mongodb
-  #         exposure: none
-  #         protocol: tcp
-  #         targetPort: 27017
+      endpoints:
+        - name: java-guestbook-mongodb
+          exposure: none
+          protocol: tcp
+          targetPort: 27017
       
-  #     volumeMounts:
-  #       - name: mongodbdata
-  #         path: /var/lib/mongodb/data
+      volumeMounts:
+        - name: mongodbdata
+          path: /var/lib/mongodb/data
 
   - name: m2
     volume:
       size: 1G
 
-  # - name: mongodbdata
-  #   volume:
-  #     size: 1G
+  - name: mongodbdata
+    volume:
+      size: 1G
 
 commands:
   - id: maven-build-backend
