@@ -32,7 +32,7 @@ import org.springframework.web.client.RestTemplate;
 public class FrontendController {
 
     private String backendUri = String.format("http://%s/messages",
-        "java-guestbook-backend:8080");
+        "127.0.0.1:8080");
 
     /**
      * endpoint for the landing page

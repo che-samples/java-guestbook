@@ -39,7 +39,7 @@ public class MongodbDataSourceConfig extends AbstractMongoConfiguration {
      */
     @Override
     public final MongoClient mongoClient() {
-        ServerAddress serverAddress = new ServerAddress("java-guestbook-mongodb:27017");
+        ServerAddress serverAddress = new ServerAddress("127.0.0.1:27017");
         MongoCredential credential = MongoCredential.createCredential("user", "guestbook", "password".toCharArray());
         return new MongoClient(serverAddress, credential, MongoClientOptions.builder().build());
     }

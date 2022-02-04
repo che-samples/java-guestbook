@@ -15,7 +15,7 @@ components:
 
         - name: java-guestbook
           exposure: public
-          protocol: tcp
+          protocol: http
           targetPort: 8443
 
         - name: debug
@@ -60,7 +60,7 @@ components:
 
   - name: mongodbdata
     volume:
-      size: 1G
+      size: 256Mi
 
 commands:
   - id: maven-build-backend
