@@ -20,7 +20,7 @@ components:
 
         - name: debug
           exposure: none
-          protocol: https
+          protocol: tcp
           targetPort: 5005
 
       volumeMounts:
