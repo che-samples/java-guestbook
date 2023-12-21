@@ -10,17 +10,17 @@ components:
       endpoints:
         - name: java-guestbook-backend
           exposure: public
-          protocol: http
+          protocol: https
           targetPort: 8080
 
         - name: java-guestbook
           exposure: public
-          protocol: http
+          protocol: https
           targetPort: 8443
 
         - name: debug
           exposure: none
-          protocol: tcp
+          protocol: https
           targetPort: 5005
 
       volumeMounts:
