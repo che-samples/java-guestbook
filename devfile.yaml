@@ -13,7 +13,7 @@ components:
           protocol: https
           targetPort: 8080
 
-        - name: java-guestbook
+        - name: frontend
           exposure: public
           protocol: https
           targetPort: 8443
