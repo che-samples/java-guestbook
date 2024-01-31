@@ -45,7 +45,7 @@ components:
         value: password
 
       endpoints:
-        - name: java-guestbook-mongodb
+        - name: mongodb
           exposure: none
           protocol: tcp
           targetPort: 27017
