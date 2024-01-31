@@ -8,7 +8,7 @@ components:
       memoryLimit: 3Gi
 
       endpoints:
-        - name: java-guestbook-backend
+        - name: backend
           exposure: public
           protocol: https
           targetPort: 8080
